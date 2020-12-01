@@ -60,11 +60,7 @@ private class Agent implements Runnable {
                try {
                    //contatore che va avanti di default
                    SwingUtilities.invokeLater(() -> ConcurrentGUI.this.display.setText(Integer.toString(Agent.this.counter)));
-                   if (this.updown) {
-                       this.counter++;
-                   } else {
-                       this.counter--;
-                   }
+                   counter += updown ? 1 : -1;
 
                    Thread.sleep(100);
                 } catch (InterruptedException ex) {
